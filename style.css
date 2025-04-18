@@ -1,0 +1,219 @@
+/* Import a modern font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+/* Base styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  margin: 0;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+/* Header and Navigation */
+header {
+  background: #0074d9;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  margin-top: 15px;
+}
+
+nav a {
+  margin: 0 12px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffe16b;
+}
+
+/* Main layout */
+main {
+  padding: 40px 20px;
+}
+
+/* Sections */
+section {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+section:nth-child(even) {
+  animation-delay: 0.2s;
+}
+section:nth-child(odd) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Download Resume Button */
+.btn-download {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #0074d9;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-download:hover {
+  background-color: #005fa3;
+  transform: translateY(-2px);
+}
+
+/* Skill Bars */
+.skill-bar {
+  margin-bottom: 20px;
+}
+
+.skill-bar span {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.skill-bar .bar {
+  background: #0074d9;
+  height: 16px;
+  border-radius: 10px;
+  width: 0;
+  animation: growBar 2s forwards;
+}
+
+@keyframes growBar {
+  to {
+    width: var(--bar-width);
+  }
+}
+
+/* Contact Form */
+form {
+  max-width: 500px;
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #0074d9;
+  outline: none;
+}
+
+button[type="submit"] {
+  background: #0074d9;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: #005fa3;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #ddd;
+  font-size: 0.9rem;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #111;
+  color: #eee;
+}
+
+body.dark-mode header {
+  background: #222;
+}
+
+body.dark-mode nav a,
+body.dark-mode .btn-download {
+  color: #eee;
+}
+
+body.dark-mode .btn-download {
+  background-color: #444;
+}
+
+body.dark-mode footer {
+  background: #222;
+}
+
+/* Theme toggle button */
+#toggle-theme {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  #toggle-theme {
+    position: static;
+    display: block;
+    margin: 10px auto;
+  }
+
+  .btn-download {
+    width: 100%;
+    text-align: center;
+  }
+
+  header, main {
+    padding: 10px;
+  }
+
+  form {
+    width: 100%;
+  }
+}
